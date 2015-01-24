@@ -9,7 +9,6 @@ public class GgjObject : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        (gameObject.GetComponent("Halo") as Behaviour).enabled = false;
 
 	}
 	
@@ -20,12 +19,10 @@ public class GgjObject : MonoBehaviour {
 
     public void OnTriggerEnter(Collider other) {
         (gameObject.GetComponent("Halo") as Behaviour).enabled = true;
-        Debug.Log("Trigger enter");
     }
 
     public void OnTriggerExit(Collider other) {
         (gameObject.GetComponent("Halo") as Behaviour).enabled = false;
         Debug.Log(other.ToString());
-        Debug.Log("Trigger exit");
     }
 }
