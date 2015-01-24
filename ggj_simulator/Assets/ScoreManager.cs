@@ -20,16 +20,16 @@ public class ScoreManager : MonoBehaviour {
 	void Awake ()
     {
         // Set up the reference.
-        ScoreText = GetComponent <Text> ();
+ //       ScoreText = GetComponent <Text> ();
 
         // Reset the score.
-        score = 0;
+        //player.totalScore = 0;
     }
 
     void Update ()
     {
         // Set the displayed text to be the word "Score" followed by the score value.
-        Text ScoreP.ScoreText.text = Score + player.totalScore;
+        //Text .ScoreText.text = Score + player.totalScore;
 		//Text ScoreA.ScoreText.text = ;
     
     }
