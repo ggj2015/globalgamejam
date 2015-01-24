@@ -23,10 +23,9 @@ public class Pickup : MonoBehaviour {
 
     // Casts a ray infinitely long to find an object
     void OnLeftClick() {
-        Debug.Log("OnLeftClick");
         RaycastHit hit;
-        if (Physics.SphereCast(new Ray(transform.position + transform.forward * 2.0f,
-                                       transform.forward), 3.0f, out hit)) {
+        if (Physics.SphereCast(transform.position, 1.0f, transform.forward,
+                                       out hit, 2.0f)) {
             if (hit.collider.gameObject.rigidbody != null) {
                 carriedObj = hit.collider.gameObject;
             }
@@ -36,7 +35,7 @@ public class Pickup : MonoBehaviour {
     void ObjectTrail() {
         if (carriedObj != null) {
 
-            Vector3 dest = transform.position + new Vector3(transform.forward.x, 0, transform.forward.z) * 5.0f;
+            Vector3 dest = transform.position + new Vector3(transform.forward.x, 0, transform.forward.z) * 1.5f;
             Vector3 delta = dest - carriedObj.transform.position;
             if (delta.magnitude > 0.1f) {
                 carriedObj.rigidbody.velocity = delta * 10.0f;
