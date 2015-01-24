@@ -1900,6 +1900,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 1126050055}
   - 111: {fileID: 1126050056}
+  - 114: {fileID: 1126050057}
+  - 122: {fileID: 1126050058}
+  - 136: {fileID: 1126050059}
+  - 54: {fileID: 1126050060}
   m_Layer: 0
   m_Name: player_type_1
   m_TagString: Untagged
@@ -1936,6 +1940,56 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 1
+--- !u!114 &1126050057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1126050054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2921adc71e9f1e5469217945a7e428fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!122 &1126050058
+Halo:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1126050054}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4286611584
+  m_Size: 5
+--- !u!136 &1126050059
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1126050054}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: .5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &1126050060
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1126050054}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1152099397
 GameObject:
   m_ObjectHideFlags: 0
@@ -2163,7 +2217,6 @@ CanvasGroup:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1208179822}
-  m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 0
   m_BlocksRaycasts: 0
@@ -2179,6 +2232,7 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -2555,8 +2609,8 @@ MonoBehaviour:
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
-    maxGroundAcceleration: 30
-    maxAirAcceleration: 20
+    maxGroundAcceleration: 10
+    maxAirAcceleration: 10
     gravity: 10
     maxFallSpeed: 20
   jumping:
@@ -2567,7 +2621,7 @@ MonoBehaviour:
     steepPerpAmount: .5
   movingPlatform:
     enabled: 1
-    movementTransfer: 2
+    movementTransfer: 0
   sliding:
     enabled: 1
     slidingSpeed: 15
@@ -2581,7 +2635,7 @@ CharacterController:
   m_GameObject: {fileID: 1258649941}
   serializedVersion: 2
   m_Height: 2
-  m_Radius: .5
+  m_Radius: 0
   m_SlopeLimit: 45
   m_StepOffset: .300000012
   m_SkinWidth: .0799999982
