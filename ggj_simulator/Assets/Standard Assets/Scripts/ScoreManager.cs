@@ -20,7 +20,10 @@ public class ScoreManager : MonoBehaviour {
 	TeamScore enemyB;
 	TeamScore enemyC;
 	TeamScore enemyD;
-	
+
+	private float currentScore;
+	private float currentScoreRate;
+
 	void Awake ()
 	{
 		//text = GetComponent<Text> ();
@@ -31,25 +34,11 @@ public class ScoreManager : MonoBehaviour {
 		// Set up the reference.
 		//ScoreP = GetComponent ("ScoreP");
 		//ScoreA = GetComponent ("ScoreA");
-
-
-		//ScoreText = GetComponent <Text> ();
-		
-		// Reset the score.
-		//score = 0;
-	}
 	
-	void Update ()
-	{
-
+		//ScoreText = GetComponent <Text> ();
+	}
+	void FixedUpdate() {
 		scoreText.text = "Score: " + playerPScore;
-		//text.text = "Score: " + playerPScore;
-
-		//ScoreP.ScoreText = 1;
-
-		// Set the displayed text to be the word "Score" followed by the score value.
-		//Text ScoreP.ScoreText.text = Score + player.totalScore;
-		//Text ScoreA.ScoreText.text = ;
-		
+		playerPScore = playerPScore + 3;
 	}
 }
