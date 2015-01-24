@@ -19,6 +19,8 @@ public class ObjectGenerator : MonoBehaviour
     public Transform chair;
     public Transform table;
 
+    public Transform player_type_1;
+
     private Vector3 tablePosition;
     private Vector3 tableSize;
 
@@ -69,8 +71,19 @@ public class ObjectGenerator : MonoBehaviour
 
         for (int i = 0; i < spotsPerRow; ++i)
         {
-            Instantiate(chair, new Vector3(tableLeftX + tableSize.x * chairXPos, ChairYPosition + chairSize.y / 2, tableBottomZ + tableSize.z * ChairZPositionForBottomRow), Quaternion.identity);
-            Instantiate(chair, new Vector3(tableLeftX + tableSize.x * chairXPos, ChairYPosition + chairSize.y / 2, tableBottomZ + tableSize.z * ChairZPositionForTopRow), Quaternion.identity);
+            var chairBotPos = new Vector3(tableLeftX + tableSize.x * chairXPos, ChairYPosition + chairSize.y / 2, tableBottomZ + tableSize.z * ChairZPositionForBottomRow);
+            var chairTopPos = new Vector3(tableLeftX + tableSize.x * chairXPos, ChairYPosition + chairSize.y / 2, tableBottomZ + tableSize.z * ChairZPositionForTopRow);
+
+            Instantiate(chair, chairBotPos, Quaternion.identity);
+            Instantiate(chair, chairTopPos, Quaternion.identity);
+
+            var playerYPosOffsetFromChair = 10.0f;  // hm....
+            var playerBotPos = new Vector3(chairBotPos.x, chairBotPos.y + playerYPosOffsetFromChair, chairBotPos.z);
+            var playerTopPos = new Vector3(chairTopPos.x, chairTopPos.y + playerYPosOffsetFromChair, chairTopPos.z);
+
+            Instantiate(player_type_1, playerBotPos, Quaternion.identity);
+            Instantiate(player_type_1, playerTopPos, Quaternion.identity);
+
             chairXPos += personSpotXPosInterval;
         }
     }
