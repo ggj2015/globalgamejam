@@ -10,7 +10,7 @@ public class ObjectGenerator : MonoBehaviour
     public const float LaptopZPositionForTopRow = 0.80f;
 
     public const float ChairZPositionForBottomRow = -0.40f;
-    public const float ChairZPositionForTopRow = 1.40f;
+    public const float ChairZPositionForTopRow = 1.0f - ChairZPositionForBottomRow;
     public const float ChairYPosition = 0.0f;
 
     public int spotsPerRow;
