@@ -2,7 +2,12 @@ fileFormatVersion: 2
 guid: de5b0ba43d086d648b243d34757eecf9
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - laptop: {fileID: 417038, guid: 2c3dcd00f77bae54a8caf44d3e06bd24, type: 2}
+  - chair: {fileID: 498368, guid: 0dfa3db60fe9f6b4b8c40b5544f80bb3, type: 2}
+  - table: {fileID: 400000, guid: 2d256e9c9a125194eb0efd9605808955, type: 2}
+  - player_type_1: {fileID: 488662, guid: 57fef89e854eb9d45bd264c516a8cd81, type: 2}
+  - player_type_2: {fileID: 425564, guid: 2c5f252c9f189e446a54043a3542e6e6, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
