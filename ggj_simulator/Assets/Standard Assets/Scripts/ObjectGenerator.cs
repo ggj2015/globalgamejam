@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class ObjectGenerator : MonoBehaviour
 {
@@ -17,33 +18,63 @@ public class ObjectGenerator : MonoBehaviour
 
     public Transform laptop;
     public Transform chair;
-    public Transform table;
+
+    public Transform table1;
+    public Transform table2;
+    public Transform table3;
+    public Transform table4;
+    public Transform table5;
+    public Transform table6;
+
+    public IList<Transform> tables;
 
     public Transform player_type_1;
     public Transform player_type_2;
 
-    private Vector3 tablePosition;
-    private Vector3 tableSize;
+    private IList<Vector3> tablePositions;
+    private IList<Vector3> tableSizes;
 
-    private float tableLeftX;
-    private float tableTopY;
-    private float tableBottomZ;
+    private IList<float> tableLeftXs;
+    private IList<float> tableTopYs;
+    private IList<float> tableBottomZs;
 
     private float personSpotXPosInterval;
     
 	void Start ()
     {
-        tablePosition = table.position;
-        tableSize = table.renderer.bounds.size;
+        tables = new List<Transform>();
 
-        tableLeftX = tablePosition.x - tableSize.x / 2;
-        tableTopY = tablePosition.y + tableSize.y / 2;
-        tableBottomZ = tablePosition.z - tableSize.z / 2;
+        tablePositions = new List<Vector3>();
+        tableSizes = new List<Vector3>();
+
+        tableLeftXs = new List<float>();
+        tableTopYs = new List<float>();
+        tableBottomZs = new List<float>();
+
+        tables.Add(table1);
+        tables.Add(table2);
+        tables.Add(table3);
+        tables.Add(table4);
+        tables.Add(table5);
+        tables.Add(table6);
+
+        for (int i = 0; i < tables.Count; ++i)
+        {
+            tablePositions.Add(tables[i].position);
+            tableSizes.Add(tables[i].renderer.bounds.size);
+
+            tableLeftXs.Add(tablePositions[i].x - tableSizes[i].x / 2);
+            tableTopYs.Add(tablePositions[i].y + tableSizes[i].y / 2);
+            tableBottomZs.Add(tablePositions[i].z - tableSizes[i].z / 2);
+        }
 
         personSpotXPosInterval = (PersonSpotLastXPos - PersonSpotFirstXPos) / (spotsPerRow - 1);
 
-        spawnLaptops();
-        spawnChairs();
+        for (int i = 0; i < tables.Count; ++i)
+        {
+            spawnLaptops(i);
+            spawnChairs(i);
+        }
 	}
 	
 	// Update is called once per frame
@@ -52,28 +83,32 @@ public class ObjectGenerator : MonoBehaviour
 	
 	}
 
-    public void spawnLaptops()
+    public void spawnLaptops(int tableIndex)
     {
         var laptopXPos = PersonSpotFirstXPos;
         var laptopSize = laptop.renderer.bounds.size;
 
         for (int i = 0; i < spotsPerRow; ++i)
         {
-            Instantiate(laptop, new Vector3(tableLeftX + tableSize.x * laptopXPos, tableTopY + laptopSize.y / 2, tableBottomZ + tableSize.z * LaptopZPositionForBottomRow), Quaternion.identity);
-            Instantiate(laptop, new Vector3(tableLeftX + tableSize.x * laptopXPos, tableTopY + laptopSize.y / 2, tableBottomZ + tableSize.z * LaptopZPositionForTopRow), Quaternion.identity);
+            var laptopXPosAbsolute = tableLeftXs[tableIndex] + tableSizes[tableIndex].x * laptopXPos;
+            var laptopYPosAbsolute = tableTopYs[tableIndex] + laptopSize.y / 2;
+            Instantiate(laptop, new Vector3(laptopXPosAbsolute, laptopYPosAbsolute, tableBottomZs[tableIndex] + tableSizes[tableIndex].z * LaptopZPositionForBottomRow), Quaternion.identity);
+            Instantiate(laptop, new Vector3(laptopXPosAbsolute, laptopYPosAbsolute, tableBottomZs[tableIndex] + tableSizes[tableIndex].z * LaptopZPositionForTopRow), Quaternion.identity);
             laptopXPos += personSpotXPosInterval;
         }
     }
 
-    public void spawnChairs()
+    public void spawnChairs(int tableIndex)
     {
         var chairXPos = PersonSpotFirstXPos;
         var chairSize = chair.renderer.bounds.size;
 
         for (int i = 0; i < spotsPerRow; ++i)
         {
-            var chairBotPos = new Vector3(tableLeftX + tableSize.x * chairXPos, ChairYPosition + chairSize.y / 2, tableBottomZ + tableSize.z * ChairZPositionForBottomRow);
-            var chairTopPos = new Vector3(tableLeftX + tableSize.x * chairXPos, ChairYPosition + chairSize.y / 2, tableBottomZ + tableSize.z * ChairZPositionForTopRow);
+            var chairXPosAbsolute = tableLeftXs[tableIndex] + tableSizes[tableIndex].x * chairXPos;
+            var chairYPosAbsolute = ChairYPosition + chairSize.y / 2;
+            var chairBotPos = new Vector3(chairXPosAbsolute, chairYPosAbsolute, tableBottomZs[tableIndex] + tableSizes[tableIndex].z * ChairZPositionForBottomRow);
+            var chairTopPos = new Vector3(chairXPosAbsolute, chairYPosAbsolute, tableBottomZs[tableIndex] + tableSizes[tableIndex].z * ChairZPositionForTopRow);
 
             Instantiate(chair, chairBotPos, Quaternion.identity);
             Instantiate(chair, chairTopPos, Quaternion.identity);
