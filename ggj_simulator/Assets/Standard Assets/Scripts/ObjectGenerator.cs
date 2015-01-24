@@ -20,6 +20,7 @@ public class ObjectGenerator : MonoBehaviour
     public Transform table;
 
     public Transform player_type_1;
+    public Transform player_type_2;
 
     private Vector3 tablePosition;
     private Vector3 tableSize;
@@ -81,8 +82,9 @@ public class ObjectGenerator : MonoBehaviour
             var playerBotPos = new Vector3(chairBotPos.x, chairBotPos.y + playerYPosOffsetFromChair, chairBotPos.z);
             var playerTopPos = new Vector3(chairTopPos.x, chairTopPos.y + playerYPosOffsetFromChair, chairTopPos.z);
 
-            Instantiate(player_type_1, playerBotPos, Quaternion.identity);
-            Instantiate(player_type_1, playerTopPos, Quaternion.identity);
+            var playerPreFab = i % 2 == 0 ? player_type_1 : player_type_2;
+            Instantiate(playerPreFab, playerBotPos, Quaternion.identity);
+            Instantiate(playerPreFab, playerTopPos, Quaternion.identity);
 
             chairXPos += personSpotXPosInterval;
         }
