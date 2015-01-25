@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System;
 
 //struct TeamScore {
 //	int totalScore;
@@ -10,10 +11,9 @@ using System.Collections;
 //}
 
 public class ScoreManager : MonoBehaviour {
-	//TeamScore player;
 
-	public static int playerPScore;
-	private Text scoreText, devScoreText, graphicsScoreText, audioScoreText;
+	public static float totalScore;
+	private Text totalScoreText, devScoreText, graphicsScoreText, audioScoreText;
 
 	private float currentScore;
 	public float currentDevScore, currentGraphicsScore, currentAudioScore;
@@ -22,25 +22,13 @@ public class ScoreManager : MonoBehaviour {
 
 	void Awake ()
 	{
-		scoreText = transform.Find("ScoreText").GetComponent<Text> ();
-
-		//gameObject.transform.name 
-		//scoreText = GameObject.FindGameObjectWithTag ("ScoreText").GetComponent<Text> ();
-
-//		devScoreText = GameObject.FindGameObjectWithTag ("DevScoreText").GetComponent<Text> ();
-//		graphicsScoreText = GameObject.FindGameObjectWithTag ("GraphicsScoreText").GetComponent<Text> ();
-//		audioScoreText = GameObject.FindGameObjectWithTag ("AudioScoreText").GetComponent<Text> ();
-//
+		totalScoreText = transform.Find("ScoreText").GetComponent<Text> ();
 		devScoreText = transform.Find("DevScoreText").GetComponent<Text> ();
 		graphicsScoreText = transform.Find("GraphicsScoreText").GetComponent<Text> ();
 		audioScoreText = transform.Find("AudioScoreText").GetComponent<Text> ();
 
-		scoreText.text = "";
-		devScoreText.text = "";
-		audioScoreText.text = "";
-		graphicsScoreText.text = "";
-
-		playerPScore = 0;
+		totalScore = 0;
+		totalScoreText.text = devScoreText.text = audioScoreText.text = graphicsScoreText.text = "";
 
 		//temp
 		currentDevScoreRate = 1; 
@@ -63,19 +51,19 @@ public class ScoreManager : MonoBehaviour {
 	}
 
 	void getTotalScore() {
-		float lowestScore = currentDevScore; 
-		scoreText.text = "Your Score: " + lowestScore;
+		float lowestScore = System.Math.Min(currentDevScore, System.Math.Min(currentGraphicsScore, currentAudioScore));
+		totalScoreText.text = "Score: " + lowestScore;
 	}
 
-	public void updateDevScoreRate(int deltaScore) {
+	public void updateDevScoreRate(float deltaScore) {
 		currentDevScoreRate += deltaScore;
 	}
 
-	public void updateGraphicsScoreRate(int deltaScore) {
+	public void updateGraphicsScoreRate(float deltaScore) {
 		currentGraphicsScoreRate += deltaScore;
 	}
 
-	public void updateAudioScoreRate(int deltaScore) {
+	public void updateAudioScoreRate(float deltaScore) {
 		currentDevScoreRate += deltaScore;
 	}
 
