@@ -57,7 +57,7 @@ public class ScoreManager : MonoBehaviour {
 
 	void getTotalScore() {
 		float lowestScore = currentDevScore; 
-		scoreText.text = "Score: " + lowestScore;
+		scoreText.text = "Your Score: " + lowestScore;
 	}
 
 	public void updateDevScoreRate(int deltaScore) {
