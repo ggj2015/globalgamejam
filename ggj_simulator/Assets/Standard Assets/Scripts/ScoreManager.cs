@@ -72,7 +72,6 @@ public class ScoreManager : MonoBehaviour {
 
 	public void updateDevScoreRate(float deltaScore) {
 		currentDevScoreRate += deltaScore;
-        Debug.Log(deltaScore);
 	}
 
 	public void updateGraphicsScoreRate(float deltaScore) {
