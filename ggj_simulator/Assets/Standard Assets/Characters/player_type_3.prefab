@@ -825,6 +825,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 471290}
   - 111: {fileID: 11171306}
+  - 122: {fileID: 12200000}
+  - 114: {fileID: 11400000}
   m_Layer: 0
   m_Name: player_type_3
   m_TagString: Untagged
@@ -1981,6 +1983,28 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 1
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 171290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b27f7fb38cff558428ac8dec2aaf76d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!122 &12200000
+Halo:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 171290}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4286611584
+  m_Size: 5
 --- !u!135 &13571640
 SphereCollider:
   m_ObjectHideFlags: 1
