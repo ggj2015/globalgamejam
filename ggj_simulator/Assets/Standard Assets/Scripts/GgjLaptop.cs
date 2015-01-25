@@ -3,10 +3,14 @@ using System.Collections;
 
 public class GgjLaptop : GgjObject {
 
+    void Awake() {
+        (gameObject.GetComponent("Halo") as Behaviour).enabled = false;;
+        codeValue = 0.2f;
+    }
+
 	// Use this for initialization
 	void Start () {
-        codeValue = 5.0f;
-	
+
 	}
 	
 	// Update is called once per frame

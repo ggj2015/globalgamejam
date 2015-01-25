@@ -9,14 +9,16 @@ public class ScoreCache : MonoBehaviour {
     static GameObject score4;
     static GameObject score5;
 
-    void Start() {
+    void Awake() {
         score0 = GameObject.Find("Score0");
         score1 = GameObject.Find("Score1");
-        if (score0) {
-            Debug.Log("Score0 object found");
-        } else {
-            Debug.Log("WHAT THE FUCK?>:");
-        }
+        score2 = GameObject.Find("Score2");
+        score3 = GameObject.Find("Score3");
+        score4 = GameObject.Find("Score4");
+        score5 = GameObject.Find("Score5");
+    }
+
+    void Start() {
     }
 
     void Update() {
@@ -28,6 +30,16 @@ public class ScoreCache : MonoBehaviour {
         switch (n) {
             case 0:
                 return score0.GetComponent<ScoreManager>();
+            case 1:
+                return score1.GetComponent<ScoreManager>();
+            case 2:
+                return score2.GetComponent<ScoreManager>();
+            case 3:
+                return score3.GetComponent<ScoreManager>();
+            case 4:
+                return score4.GetComponent<ScoreManager>();
+            case 5:
+                return score5.GetComponent<ScoreManager>();
             default:
                 return null;
         }

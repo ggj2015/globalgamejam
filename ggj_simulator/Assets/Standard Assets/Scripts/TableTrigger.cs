@@ -16,51 +16,10 @@ public class TableTrigger : MonoBehaviour {
 	}
 
     public void OnTriggerEnter(Collider other) {
-        // Only highlight if in the player's table area
-        string tableName = transform.parent.gameObject.ToString();
 
-        // Get the team table it's colliding with and add to its score
-        switch (tableName)
-        {
-            case "Table 0 (UnityEngine.GameObject)":
-                
-                break;
-            case "Table 1 (UnityEngine.GameObject)":
-                break;
-            case "Table 2 (UnityEngine.GameObject)":
-                break;
-            case "Table 3 (UnityEngine.GameObject)":
-                break;
-            case "Table 4 (UnityEngine.GameObject)":
-                break;
-            case "Table 5 (UnityEngine.GameObject)":
-                break;
-            default:
-                break;
-        }
     }
 
     public void OnTriggerExit(Collider other) {
         // Only highlight if in the player's table area
-        string tableName = transform.parent.gameObject.ToString();
-
-        // Get the team table it's colliding with and add to its score
-        switch (tableName)
-        {
-            case "Table 0 (UnityEngine.GameObject)":
-                break;
-            case "Table 1 (UnityEngine.GameObject)":
-                break;
-            case "Table 2 (UnityEngine.GameObject)":
-                break;
-            case "Table 3 (UnityEngine.GameObject)":
-                break;
-            case "Table 4 (UnityEngine.GameObject)":
-                break;
-            case "Table 5 (UnityEngine.GameObject)":
-                break;
-            default:
-                break;
-        }
     }
 }

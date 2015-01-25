@@ -31,10 +31,15 @@ public class ScoreManager : MonoBehaviour {
 		totalScoreText.text = devScoreText.text = audioScoreText.text = graphicsScoreText.text = "";
 
 		//temp
-		currentDevScoreRate = 1; 
-		currentGraphicsScoreRate = 2; 
-		currentAudioScoreRate = 3; 
+		currentDevScoreRate = 0; 
+		currentGraphicsScoreRate = 0; 
+		currentAudioScoreRate = 0; 
 	}
+     
+    void Start() {
+
+    }
+
 	
 	// change this to per sec
 	void FixedUpdate() {
@@ -57,6 +62,7 @@ public class ScoreManager : MonoBehaviour {
 
 	public void updateDevScoreRate(float deltaScore) {
 		currentDevScoreRate += deltaScore;
+        Debug.Log(deltaScore);
 	}
 
 	public void updateGraphicsScoreRate(float deltaScore) {
