@@ -49,21 +49,18 @@ public class ScoreManager : MonoBehaviour {
 	
 	// change this to per sec
 	void FixedUpdate() {
-		
-		Application.targetFrameRate = 300;
 
 		devScoreText.text = "Dev: " + currentDevScore;
 		currentDevScore = currentDevScore + currentDevScoreRate; //temp
+        devSlider.value = currentDevScore;
 		
 		graphicsScoreText.text = "Graphics: " + currentGraphicsScore;
 		currentGraphicsScore = currentGraphicsScore + currentGraphicsScoreRate; //temp
+        graphicsSlider.value = currentGraphicsScore;
 		
 		audioScoreText.text = "Audio: " + currentAudioScore;
 		currentAudioScore = currentAudioScore + currentAudioScoreRate; //temp
-
-        devSlider.value = 200;
-        graphicsSlider.value = 10;
-        audioSlider.value = 3;
+        audioSlider.value = currentAudioScore;
 		
         getTotalScore ();
 	}
