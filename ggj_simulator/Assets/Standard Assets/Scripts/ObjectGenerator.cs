@@ -110,8 +110,8 @@ public class ObjectGenerator : MonoBehaviour
             var chairBotPos = new Vector3(chairXPosAbsolute, chairYPosAbsolute, tableBottomZs[tableIndex] + tableSizes[tableIndex].z * ChairZPositionForBottomRow);
             var chairTopPos = new Vector3(chairXPosAbsolute, chairYPosAbsolute, tableBottomZs[tableIndex] + tableSizes[tableIndex].z * ChairZPositionForTopRow);
 
-            Instantiate(chair, chairBotPos, Quaternion.identity);
-            Instantiate(chair, chairTopPos, Quaternion.identity);
+            Instantiate(chair, chairBotPos, Quaternion.Euler(270, 0, 0));
+            Instantiate(chair, chairTopPos, Quaternion.Euler(270, 180, 0));
 
             var playerYPosOffsetFromChair = 10.0f;  // hm....
             var playerBotPos = new Vector3(chairBotPos.x, chairBotPos.y + playerYPosOffsetFromChair, chairBotPos.z);
