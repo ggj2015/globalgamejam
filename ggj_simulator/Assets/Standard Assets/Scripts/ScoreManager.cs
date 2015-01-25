@@ -20,8 +20,12 @@ public class ScoreManager : MonoBehaviour {
 
 	public float currentDevScoreRate, currentGraphicsScoreRate, currentAudioScoreRate;
 
+	//public String Score = this.name.ToString;
+
 	void Awake ()
 	{
+		//var Score = transform.parent;
+
 		totalScoreText = transform.Find("ScoreText").GetComponent<Text> ();
 		devScoreText = transform.Find("DevScoreText").GetComponent<Text> ();
 		graphicsScoreText = transform.Find("GraphicsScoreText").GetComponent<Text> ();
@@ -57,7 +61,8 @@ public class ScoreManager : MonoBehaviour {
 
 	void getTotalScore() {
 		float lowestScore = System.Math.Min(currentDevScore, System.Math.Min(currentGraphicsScore, currentAudioScore));
-		totalScoreText.text = "Score: " + lowestScore;
+		//totalScoreText.text = gameObject.transform.name + lowestScore;
+		totalScoreText.text = gameObject.transform.name + ":" + lowestScore;	
 	}
 
 	public void updateDevScoreRate(float deltaScore) {
