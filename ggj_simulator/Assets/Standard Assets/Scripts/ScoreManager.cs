@@ -22,11 +22,18 @@ public class ScoreManager : MonoBehaviour {
 
 	void Awake ()
 	{
-		scoreText = GameObject.FindGameObjectWithTag ("ScoreText").GetComponent<Text> ();
+		scoreText = transform.Find("ScoreText").GetComponent<Text> ();
 
-		devScoreText = GameObject.FindGameObjectWithTag ("DevScoreText").GetComponent<Text> ();
-		graphicsScoreText = GameObject.FindGameObjectWithTag ("GraphicsScoreText").GetComponent<Text> ();
-		audioScoreText = GameObject.FindGameObjectWithTag ("AudioScoreText").GetComponent<Text> ();
+		//gameObject.transform.name 
+		//scoreText = GameObject.FindGameObjectWithTag ("ScoreText").GetComponent<Text> ();
+
+//		devScoreText = GameObject.FindGameObjectWithTag ("DevScoreText").GetComponent<Text> ();
+//		graphicsScoreText = GameObject.FindGameObjectWithTag ("GraphicsScoreText").GetComponent<Text> ();
+//		audioScoreText = GameObject.FindGameObjectWithTag ("AudioScoreText").GetComponent<Text> ();
+//
+		devScoreText = transform.Find("DevScoreText").GetComponent<Text> ();
+		graphicsScoreText = transform.Find("GraphicsScoreText").GetComponent<Text> ();
+		audioScoreText = transform.Find("AudioScoreText").GetComponent<Text> ();
 
 		scoreText.text = "";
 		devScoreText.text = "";
