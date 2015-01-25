@@ -14,6 +14,7 @@ public class ScoreManager : MonoBehaviour {
 
 	public static float totalScore;
 	private Text totalScoreText, devScoreText, graphicsScoreText, audioScoreText;
+    private Slider devSlider, graphicsSlider, audioSlider;
 
 	private float currentScore;
 	public float currentDevScore, currentGraphicsScore, currentAudioScore;
@@ -27,8 +28,14 @@ public class ScoreManager : MonoBehaviour {
 		graphicsScoreText = transform.Find("GraphicsScoreText").GetComponent<Text> ();
 		audioScoreText = transform.Find("AudioScoreText").GetComponent<Text> ();
 
+        devSlider = transform.Find("DevSlider").GetComponent<Slider>();
+        graphicsSlider = transform.Find("GraphicsSlider").GetComponent<Slider>();
+        audioSlider = transform.Find("AudioSlider").GetComponent<Slider>();
+
 		totalScore = 0;
 		totalScoreText.text = devScoreText.text = audioScoreText.text = graphicsScoreText.text = "";
+
+        devSlider.value = graphicsSlider.value = audioSlider.value = 0;
 
 		//temp
 		currentDevScoreRate = 0; 
@@ -42,19 +49,20 @@ public class ScoreManager : MonoBehaviour {
 	
 	// change this to per sec
 	void FixedUpdate() {
-		
-		Application.targetFrameRate = 300;
 
 		devScoreText.text = "Dev: " + currentDevScore;
 		currentDevScore = currentDevScore + currentDevScoreRate; //temp
+        devSlider.value = currentDevScore;
 		
 		graphicsScoreText.text = "Graphics: " + currentGraphicsScore;
 		currentGraphicsScore = currentGraphicsScore + currentGraphicsScoreRate; //temp
+        graphicsSlider.value = currentGraphicsScore;
 		
 		audioScoreText.text = "Audio: " + currentAudioScore;
 		currentAudioScore = currentAudioScore + currentAudioScoreRate; //temp
-
-		getTotalScore ();
+        audioSlider.value = currentAudioScore;
+		
+        getTotalScore ();
 	}
 
 	void getTotalScore() {

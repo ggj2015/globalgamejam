@@ -84,7 +84,7 @@ GameObject:
   - 224: {fileID: 90253396}
   - 114: {fileID: 90253397}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: DevSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -167,7 +167,7 @@ GameObject:
   - 224: {fileID: 102541878}
   - 114: {fileID: 102541879}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: AudioSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -650,7 +650,7 @@ GameObject:
   - 224: {fileID: 272900338}
   - 114: {fileID: 272900339}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: GraphicsSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -717,7 +717,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 100
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1010,7 +1010,7 @@ GameObject:
   - 224: {fileID: 365290780}
   - 114: {fileID: 365290781}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: AudioSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1974,7 +1974,7 @@ GameObject:
   - 224: {fileID: 552352001}
   - 114: {fileID: 552352002}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: DevSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2632,7 +2632,7 @@ GameObject:
   - 224: {fileID: 717492680}
   - 114: {fileID: 717492681}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: GraphicsSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2715,7 +2715,7 @@ GameObject:
   - 224: {fileID: 719639646}
   - 114: {fileID: 719639647}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: AudioSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3393,7 +3393,7 @@ GameObject:
   - 224: {fileID: 924733479}
   - 114: {fileID: 924733480}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: AudioSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4312,7 +4312,7 @@ GameObject:
   - 224: {fileID: 1236219072}
   - 114: {fileID: 1236219073}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: DevSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4428,7 +4428,7 @@ GameObject:
   - 224: {fileID: 1252084392}
   - 114: {fileID: 1252084393}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: GraphicsSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4700,7 +4700,7 @@ CharacterController:
   m_Radius: 0
   m_SlopeLimit: 45
   m_StepOffset: .300000012
-  m_SkinWidth: 1.5
+  m_SkinWidth: .200000003
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1258649950
@@ -5036,7 +5036,7 @@ GameObject:
   - 224: {fileID: 1334798485}
   - 114: {fileID: 1334798486}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: AudioSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5651,7 +5651,7 @@ GameObject:
   - 224: {fileID: 1483595748}
   - 114: {fileID: 1483595749}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: DevSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5800,7 +5800,7 @@ GameObject:
   - 224: {fileID: 1487037321}
   - 114: {fileID: 1487037322}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: GraphicsSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5944,7 +5944,7 @@ GameObject:
   - 224: {fileID: 1522872265}
   - 114: {fileID: 1522872266}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: DevSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6342,7 +6342,7 @@ GameObject:
   - 224: {fileID: 1603788714}
   - 114: {fileID: 1603788715}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: AudioSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6726,7 +6726,7 @@ GameObject:
   - 224: {fileID: 1703336636}
   - 114: {fileID: 1703336637}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: DevSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7564,7 +7564,7 @@ GameObject:
   - 224: {fileID: 1919824079}
   - 114: {fileID: 1919824080}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: GraphicsSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8235,7 +8235,7 @@ GameObject:
   - 224: {fileID: 1998374799}
   - 114: {fileID: 1998374800}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: GraphicsSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
