@@ -4,8 +4,8 @@ using System.Collections;
 public class GgjLaptop : GgjObject {
 
     void Awake() {
-        (gameObject.GetComponent("Halo") as Behaviour).enabled = false;;
-        codeValue = 0.2f;
+        (gameObject.GetComponent("Halo") as Behaviour).enabled = false;
+        codeValue = 0.1f;
     }
 
 	// Use this for initialization
