@@ -82,10 +82,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spotsPerRow: 8
-  laptop: {fileID: 417038, guid: 2c3dcd00f77bae54a8caf44d3e06bd24, type: 2}
+  laptop: {fileID: 440838, guid: 50445366ffdd82441861023f699ad22d, type: 2}
   chair: {fileID: 498368, guid: 0dfa3db60fe9f6b4b8c40b5544f80bb3, type: 2}
   table1: {fileID: 0}
   table2: {fileID: 0}
+  table3: {fileID: 0}
+  table4: {fileID: 0}
+  table5: {fileID: 0}
+  table6: {fileID: 0}
   player_type_1: {fileID: 488662, guid: 57fef89e854eb9d45bd264c516a8cd81, type: 2}
   player_type_2: {fileID: 425564, guid: 2c5f252c9f189e446a54043a3542e6e6, type: 2}
 --- !u!1001 &100100000

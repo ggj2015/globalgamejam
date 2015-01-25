@@ -93,7 +93,7 @@ public class ObjectGenerator : MonoBehaviour
             var laptopXPosAbsolute = tableLeftXs[tableIndex] + tableSizes[tableIndex].x * laptopXPos;
             var laptopYPosAbsolute = tableTopYs[tableIndex] + laptopSize.y / 2;
             Instantiate(laptop, new Vector3(laptopXPosAbsolute, laptopYPosAbsolute, tableBottomZs[tableIndex] + tableSizes[tableIndex].z * LaptopZPositionForBottomRow), Quaternion.identity);
-            Instantiate(laptop, new Vector3(laptopXPosAbsolute, laptopYPosAbsolute, tableBottomZs[tableIndex] + tableSizes[tableIndex].z * LaptopZPositionForTopRow), Quaternion.identity);
+            Instantiate(laptop, new Vector3(laptopXPosAbsolute, laptopYPosAbsolute, tableBottomZs[tableIndex] + tableSizes[tableIndex].z * LaptopZPositionForTopRow), Quaternion.Euler(0, 180, 0));
             laptopXPos += personSpotXPosInterval;
         }
     }
