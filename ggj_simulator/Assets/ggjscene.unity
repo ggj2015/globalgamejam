@@ -177,6 +177,10 @@ Prefab:
       propertyPath: spotsPerRow
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 11401688, guid: 5c05e57654e4df94b8975556b96ccc2e, type: 2}
+      propertyPath: chair
+      value: 
+      objectReference: {fileID: 462244, guid: 0b928c357c7c77649bc195553c2f6741, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5c05e57654e4df94b8975556b96ccc2e, type: 2}
   m_RootGameObject: {fileID: 1585449209}
@@ -3379,7 +3383,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spotsPerRow: 6
   laptop: {fileID: 440838, guid: 50445366ffdd82441861023f699ad22d, type: 2}
-  chair: {fileID: 498368, guid: 0dfa3db60fe9f6b4b8c40b5544f80bb3, type: 2}
+  chair: {fileID: 462244, guid: 0b928c357c7c77649bc195553c2f6741, type: 2}
   table1: {fileID: 1293337922}
   table2: {fileID: 801358507}
   table3: {fileID: 1873212961}
