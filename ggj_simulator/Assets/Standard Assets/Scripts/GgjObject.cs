@@ -2,9 +2,10 @@
 using System.Collections;
 
 public class GgjObject : MonoBehaviour {
-    float graphicsValue;
-    float audioValue;
-    float codeValue;
+    protected float graphicsValue;
+    protected float audioValue;
+    protected float codeValue;
+
 
     void Awake () {
         (gameObject.GetComponent("Halo") as Behaviour).enabled = false;
@@ -12,6 +13,7 @@ public class GgjObject : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
 	}
 	
 	// Update is called once per frame
@@ -22,10 +24,27 @@ public class GgjObject : MonoBehaviour {
     public void OnTriggerEnter(Collider other) {
         // Only highlight if in the player's table area
         string tableName = other.transform.parent.gameObject.ToString();
-        Debug.Log(tableName);
 
         if (tableName == "Table (UnityEngine.GameObject)") { // HACK needs to change if table name changes
             (gameObject.GetComponent("Halo") as Behaviour).enabled = true;
+        }
+
+        // Get the team table it's colliding with and add to its score
+        switch (tableName)
+        {
+            case "Table (UnityEngine.GameObject)":
+                ScoreCache.getScoreManager(0).updateDevScoreRate((int) codeValue);
+                break;
+            case "Table 2 (UnityEngine.GameObject)":
+                break;
+            case "Table 3 (UnityEngine.GameObject)":
+                break;
+            case "Table 4 (UnityEngine.GameObject)":
+                break;
+            case "Table 5 (UnityEngine.GameObject)":
+                break;
+            default:
+                break;
         }
     }
 
