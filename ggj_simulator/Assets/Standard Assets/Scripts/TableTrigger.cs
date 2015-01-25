@@ -22,8 +22,10 @@ public class TableTrigger : MonoBehaviour {
         // Get the team table it's colliding with and add to its score
         switch (tableName)
         {
-            case "Table (UnityEngine.GameObject)":
+            case "Table 0 (UnityEngine.GameObject)":
                 
+                break;
+            case "Table 1 (UnityEngine.GameObject)":
                 break;
             case "Table 2 (UnityEngine.GameObject)":
                 break;
@@ -45,7 +47,9 @@ public class TableTrigger : MonoBehaviour {
         // Get the team table it's colliding with and add to its score
         switch (tableName)
         {
-            case "Table (UnityEngine.GameObject)":
+            case "Table 0 (UnityEngine.GameObject)":
+                break;
+            case "Table 1 (UnityEngine.GameObject)":
                 break;
             case "Table 2 (UnityEngine.GameObject)":
                 break;

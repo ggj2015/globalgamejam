@@ -25,15 +25,17 @@ public class GgjObject : MonoBehaviour {
         // Only highlight if in the player's table area
         string tableName = other.transform.parent.gameObject.ToString();
 
-        if (tableName == "Table (UnityEngine.GameObject)") { // HACK needs to change if table name changes
+        if (tableName == "Table 0 (UnityEngine.GameObject)") { // HACK needs to change if table name changes
             (gameObject.GetComponent("Halo") as Behaviour).enabled = true;
         }
 
         // Get the team table it's colliding with and add to its score
         switch (tableName)
         {
-            case "Table (UnityEngine.GameObject)":
+            case "Table 0 (UnityEngine.GameObject)":
                 ScoreCache.getScoreManager(0).updateDevScoreRate((int) codeValue);
+                break;
+            case "Table 1 (UnityEngine.GameObject)":
                 break;
             case "Table 2 (UnityEngine.GameObject)":
                 break;
