@@ -19,12 +19,12 @@ public class ObjectGenerator : MonoBehaviour
     public Transform laptop;
     public Transform chair;
 
+    public Transform table0;
     public Transform table1;
     public Transform table2;
     public Transform table3;
     public Transform table4;
     public Transform table5;
-    public Transform table6;
 
     public IList<Transform> tables;
 
@@ -52,12 +52,12 @@ public class ObjectGenerator : MonoBehaviour
         tableTopYs = new List<float>();
         tableBottomZs = new List<float>();
 
+        tables.Add(table0);
         tables.Add(table1);
         tables.Add(table2);
         tables.Add(table3);
         tables.Add(table4);
         tables.Add(table5);
-        tables.Add(table6);
 
         for (int i = 0; i < tables.Count; ++i)
         {
