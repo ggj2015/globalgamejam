@@ -20,12 +20,8 @@ public class ScoreManager : MonoBehaviour {
 
 	public float currentDevScoreRate, currentGraphicsScoreRate, currentAudioScoreRate;
 
-	//public String Score = this.name.ToString;
-
 	void Awake ()
 	{
-		//var Score = transform.parent;
-
 		totalScoreText = transform.Find("ScoreText").GetComponent<Text> ();
 		devScoreText = transform.Find("DevScoreText").GetComponent<Text> ();
 		graphicsScoreText = transform.Find("GraphicsScoreText").GetComponent<Text> ();
@@ -43,10 +39,12 @@ public class ScoreManager : MonoBehaviour {
     void Start() {
 
     }
-
 	
 	// change this to per sec
 	void FixedUpdate() {
+		
+		Application.targetFrameRate = 300;
+
 		devScoreText.text = "Dev: " + currentDevScore;
 		currentDevScore = currentDevScore + currentDevScoreRate; //temp
 		
@@ -61,7 +59,6 @@ public class ScoreManager : MonoBehaviour {
 
 	void getTotalScore() {
 		float lowestScore = System.Math.Min(currentDevScore, System.Math.Min(currentGraphicsScore, currentAudioScore));
-		//totalScoreText.text = gameObject.transform.name + lowestScore;
 		totalScoreText.text = gameObject.transform.name + ":" + lowestScore;	
 	}
 
